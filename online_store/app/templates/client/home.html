@@ -1,6 +1,51 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
-<h1>Welcome to the Online Store</h1>
-<p>Browse and buy products online!</p>
+<div class="text-center mb-5">
+    <h1 class="display-4">Welcome to the Online Store</h1>
+    <p class="lead">Browse and buy products online!</p>
+</div>
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <i class="fas fa-box fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Products</h5>
+                <p class="card-text">Explore our wide range of products with images and details.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <i class="fas fa-shopping-cart fa-3x text-success mb-3"></i>
+                <h5 class="card-title">Orders</h5>
+                <p class="card-text">Place your order and track its status easily.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <i class="fas fa-credit-card fa-3x text-warning mb-3"></i>
+                <h5 class="card-title">Payments</h5>
+                <p class="card-text">Secure and fast payment options for your convenience.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    {% for i in range(3) %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <img src="https://via.placeholder.com/300x200?text=Product+Image" class="card-img-top" alt="Product Image">
+            <div class="card-body">
+                <h5 class="card-title">Product {{ i+1 }}</h5>
+                <p class="card-text">This is a short description of product {{ i+1 }}. It's amazing and you should buy it!</p>
+                <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
